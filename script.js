@@ -17,6 +17,7 @@ function chooseOperation(selectedOperation) {
     operation = selectedOperation;
     previousOperand = currentOperand;
     currentOperand = '';
+    updateDisplay();
 }
 
 function calculate() {
@@ -58,6 +59,16 @@ function deleteNumber() {
     updateDisplay();
 }
 
-function updateDisplay() {
-    displayElement.innerText = currentOperand;
+function toggleSign() {
+    if (currentOperand.startsWith('-')) {
+        currentOperand = currentOperand.substring(1);
+    } else {
+        currentOperand = '-' + currentOperand;
+    }
+    updateDisplay();
 }
+
+function updateDisplay() {
+    displayElement.innerText = currentOperand || '0';
+}
+
