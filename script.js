@@ -72,3 +72,33 @@ function updateDisplay() {
     displayElement.innerText = currentOperand || '0';
 }
 
+// Advanced Functions
+function calculateSin() {
+    currentOperand = Math.sin(parseFloat(currentOperand)).toString();
+    updateDisplay();
+}
+
+function calculateCos() {
+    currentOperand = Math.cos(parseFloat(currentOperand)).toString();
+    updateDisplay();
+}
+
+function calculateTan() {
+    currentOperand = Math.tan(parseFloat(currentOperand)).toString();
+    updateDisplay();
+}
+
+function calculateLog() {
+    currentOperand = Math.log10(parseFloat(currentOperand)).toString();
+    updateDisplay();
+}
+
+function calculateSqrt() {
+    currentOperand = Math.sqrt(parseFloat(currentOperand)).toString();
+    updateDisplay();
+}
+
+function calculateExp() {
+    currentOperand = Math.exp(parseFloat(currentOperand)).toString();
+    updateDisplay();
+}
