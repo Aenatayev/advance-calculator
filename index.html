@@ -10,7 +10,7 @@
     <div class="calculator">
         <div class="display" id="display">0</div>
         <div class="buttons">
-            <button class="button" onclick="clearDisplay()">C</button>
+            <button class="button" onclick="clearDisplay()">CLR</button>
             <button class="button" onclick="deleteNumber()">DEL</button>
             <button class="button operator" onclick="chooseOperation('/')">÷</button>
             <button class="button operator" onclick="chooseOperation('*')">×</button>
@@ -30,6 +30,13 @@
             <button class="button" onclick="toggleSign()">±</button>
             <button class="button" onclick="appendNumber('00')">00</button>
             <button class="button operator" onclick="calculate()">=</button>
+            <!-- Advanced Functions -->
+            <button class="button" onclick="calculateSin()">sin</button>
+            <button class="button" onclick="calculateCos()">cos</button>
+            <button class="button" onclick="calculateTan()">tan</button>
+            <button class="button" onclick="calculateLog()">log</button>
+            <button class="button" onclick="calculateSqrt()">√</button>
+            <button class="button" onclick="calculateExp()">e^x</button>
         </div>
     </div>
     <script src="script.js"></script>
