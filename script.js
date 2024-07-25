@@ -51,7 +51,12 @@ const performCalculation = {
     '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
     '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
     '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
-    '=': (firstOperand, secondOperand) => secondOperand
+    '=': (firstOperand, secondOperand) => secondOperand,
+    '^': (firstOperand, secondOperand) => Math.pow(firstOperand, secondOperand),
+    'sqrt': (firstOperand) => Math.sqrt(firstOperand),
+    'sin': (firstOperand) => Math.sin(firstOperand),
+    'cos': (firstOperand) => Math.cos(firstOperand),
+    'tan': (firstOperand) => Math.tan(firstOperand),
 };
 
 function resetCalculator() {
