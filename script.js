@@ -25,7 +25,7 @@ function inputDecimal(dot) {
 }
 
 function handleOperator(nextOperator) {
-    const { firstOperand, displayValue, operator } = calculator
+    const { firstOperand, displayValue, operator } = calculator;
     const inputValue = parseFloat(displayValue);
 
     if (operator && calculator.waitingForSecondOperand)  {
