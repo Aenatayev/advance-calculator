@@ -17,7 +17,11 @@ function inputDigit(digit) {
 }
 
 function inputDecimal(dot) {
-    if (calculator.waitingForSecondOperand === true) return;
+    if (calculator.waitingForSecondOperand === true) {
+        calculator.displayValue = "0.";
+        calculator.waitingForSecondOperand = false;
+        return;
+    }
 
     if (!calculator.displayValue.includes(dot)) {
         calculator.displayValue += dot;
@@ -33,12 +37,12 @@ function handleOperator(nextOperator) {
         return;
     }
 
-    if (firstOperand == null) {
+    if (firstOperand == null && !isNaN(inputValue)) {
         calculator.firstOperand = inputValue;
     } else if (operator) {
         const result = performCalculation[operator](firstOperand, inputValue);
 
-        calculator.displayValue = String(result);
+        calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
         calculator.firstOperand = result;
     }
 
@@ -51,15 +55,7 @@ const performCalculation = {
     '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
     '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
     '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
-    '=': (firstOperand, secondOperand) => secondOperand,
-    '^': (firstOperand, secondOperand) => Math.pow(firstOperand, secondOperand),
-    'sqrt': (firstOperand) => Math.sqrt(firstOperand),
-    'sin': (firstOperand) => Math.sin(firstOperand),
-    'cos': (firstOperand) => Math.cos(firstOperand),
-    'tan': (firstOperand) => Math.tan(firstOperand),
-    'log': (firstOperand) => Math.log10(firstOperand),
-    'π': (firstOperand) => Math.PI,
-    'e': (firstOperand) => Math.E,
+    '=': (firstOperand, secondOperand) => secondOperand
 };
 
 function resetCalculator() {
