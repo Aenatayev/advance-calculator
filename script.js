@@ -57,6 +57,9 @@ const performCalculation = {
     'sin': (firstOperand) => Math.sin(firstOperand),
     'cos': (firstOperand) => Math.cos(firstOperand),
     'tan': (firstOperand) => Math.tan(firstOperand),
+    'log': (firstOperand) => Math.log10(firstOperand),
+    'π': (firstOperand) => Math.PI,
+    'e': (firstOperand) => Math.E,
 };
 
 function resetCalculator() {
